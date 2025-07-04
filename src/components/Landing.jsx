@@ -14,19 +14,6 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Typewriter from "./Typewriter";
 
 const Landing = () => {
-  // Typewriter logic
-  const fullText = "Aspiring Software Developer";
-  const [displayedText, setDisplayedText] = useState("");
-  useEffect(() => {
-    let index = 0;
-    const interval = setInterval(() => {
-      setDisplayedText(fullText.slice(0, index + 1));
-      index++;
-      if (index === fullText.length) clearInterval(interval);
-    }, 75);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <Box
       id="landing"
@@ -56,7 +43,7 @@ const Landing = () => {
       >
         <Avatar
           alt="Robert Winston Widjaja"
-          src="/assets/me.jpg"
+          src="me.jpg"
           sx={{
             width: { xs: 200, sm: 240, md: 280 },
             height: { xs: 200, sm: 240, md: 280 },

@@ -72,7 +72,7 @@ const Experience = () => {
               >
                 <Box
                   component="img"
-                  src="/assets/uvic.png"
+                  src="uvic.png"
                   alt="UVic"
                   sx={{ width: 60, height: 40 }}
                 />
@@ -105,7 +105,7 @@ const Experience = () => {
               >
                 <Box
                   component="img"
-                  src="/assets/mathnasium.png"
+                  src="mathnasium.png"
                   alt="Mathnasium"
                   sx={{ width: 60, height: 40 }}
                 />
@@ -154,7 +154,7 @@ const Experience = () => {
               >
                 <Box
                   component="img"
-                  src="/assets/bilimetrix.png"
+                  src="bilimetrix.png"
                   alt="Bilimetrix"
                   sx={{ width: 60, height: 40 }}
                 />
@@ -209,7 +209,7 @@ const Experience = () => {
               >
                 <Box
                   component="img"
-                  src="/assets/amazon.png"
+                  src="amazon.png"
                   alt="Amazon"
                   sx={{ width: 60, height: 40 }}
                 />
@@ -264,7 +264,7 @@ const Experience = () => {
               >
                 <Box
                   component="img"
-                  src="/assets/seattleu.png"
+                  src="seattleu.png"
                   alt="Seattle University"
                   sx={{ width: 60, height: 40 }}
                 />
@@ -298,7 +298,7 @@ const Experience = () => {
               >
                 <Box
                   component="img"
-                  src="/assets/smartfren.png"
+                  src="smartfren.png"
                   alt="Smartfren"
                   sx={{ width: 60, height: 40 }}
                 />
@@ -352,7 +352,7 @@ const Experience = () => {
               >
                 <Box
                   component="img"
-                  src="/assets/shoreline.png"
+                  src="shoreline.png"
                   alt="Shoreline"
                   sx={{ width: 60, height: 40 }}
                 />
