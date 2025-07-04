@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-scroll";
-import {
-  BottomNavigation,
-  BottomNavigationAction,
-  Paper,
-  Stack,
-} from "@mui/material";
+import { BottomNavigationAction, Paper, Stack } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
 import WorkIcon from "@mui/icons-material/Work";
@@ -28,18 +23,19 @@ const Navbar = () => {
       elevation={8}
       sx={{
         position: "fixed",
-        top: "50%",
-        left: 20,
-        transform: "translateY(-50%)",
+        bottom: 30,
+        left: "50%",
+        transform: "translateX(-50%)",
         backdropFilter: "blur(10px)",
         background: "rgba(255, 255, 255, 0.08)",
         border: "1px solid rgba(255, 255, 255, 0.2)",
         borderRadius: "20px",
-        p: 1,
+        px: 2,
+        py: 1,
         zIndex: 1000,
       }}
     >
-      <Stack spacing={1} direction="column" alignItems="center">
+      <Stack direction="row" spacing={1} alignItems="center">
         {sections.map((section, index) => (
           <Link
             key={section.to}
@@ -50,7 +46,7 @@ const Navbar = () => {
             spy
             onSetActive={() => setActiveIndex(index)}
             onClick={() => setActiveIndex(index)}
-            style={{ width: "100%" }}
+            style={{ width: "auto" }}
           >
             <BottomNavigationAction
               icon={section.icon}
@@ -62,7 +58,7 @@ const Navbar = () => {
                 transition: "all 0.3s ease",
                 background:
                   index === activeIndex
-                    ? "rgba(255, 255, 255, 0.4)"
+                    ? "rgba(255, 255, 255, 0.3)"
                     : "transparent",
                 "&:hover": {
                   transform: "scale(1.15)",

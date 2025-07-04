@@ -1,16 +1,6 @@
-import React, { useState, useEffect } from "react";
-import {
-  Box,
-  Typography,
-  Avatar,
-  Button,
-  IconButton,
-  Tooltip,
-} from "@mui/material";
+import React from "react";
+import { Box, Typography, Avatar, Button } from "@mui/material";
 import { Link as ScrollLink } from "react-scroll";
-import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Typewriter from "./Typewriter";
 
 const Landing = () => {
@@ -90,14 +80,17 @@ const Landing = () => {
             mt: 3,
             display: "flex",
             gap: 2,
-            flexDirection: { xs: "column", sm: "row" },
+            flexDirection: { sm: "row" },
             justifyContent: "center",
+            alignItems: "center",
+            flexWrap: "wrap",
           }}
         >
           {/* Let’s Chat */}
           <ScrollLink to="contact" smooth duration={500} offset={-50}>
             <Button
               sx={{
+                minWidth: 160, // 🔑 Make both buttons same width
                 textTransform: "none",
                 fontWeight: 600,
                 px: 4,
@@ -123,6 +116,7 @@ const Landing = () => {
             target="_blank"
             rel="noopener noreferrer"
             sx={{
+              minWidth: 160, // 🔑 Match the Let’s Chat button
               textTransform: "none",
               fontWeight: 600,
               px: 4,
@@ -141,63 +135,6 @@ const Landing = () => {
             My Work
           </Button>
         </Box>
-      </Box>
-
-      {/* Side Contact Icons */}
-      <Box
-        sx={{
-          position: "absolute",
-          bottom: 24,
-          right: 24,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: 2,
-          zIndex: 2,
-        }}
-      >
-        <Tooltip title="LinkedIn" arrow placement="left">
-          <IconButton
-            href="https://www.linkedin.com/in/robert-widjaja/"
-            target="_blank"
-            rel="noopener noreferrer"
-            sx={{
-              color: "white",
-              transition: "0.3s",
-              "&:hover": { color: "#0a66c2" },
-            }}
-          >
-            <LinkedInIcon fontSize="large" />
-          </IconButton>
-        </Tooltip>
-
-        <Tooltip title="Email Me" arrow placement="left">
-          <IconButton
-            href="mailto:robertwinstonwidjaja1@gmail.com"
-            sx={{
-              color: "white",
-              transition: "0.3s",
-              "&:hover": { color: "#f87171" },
-            }}
-          >
-            <EmailOutlinedIcon fontSize="large" />
-          </IconButton>
-        </Tooltip>
-
-        <Tooltip title="Instagram" arrow placement="left">
-          <IconButton
-            href="https://www.instagram.com/robertwwja/"
-            target="_blank"
-            rel="noopener noreferrer"
-            sx={{
-              color: "white",
-              transition: "0.3s",
-              "&:hover": { color: "#e1306c" },
-            }}
-          >
-            <InstagramIcon fontSize="large" />
-          </IconButton>
-        </Tooltip>
       </Box>
 
       {/* Cursor Animation */}

@@ -9,22 +9,6 @@ import Navbar from "./components/Navbar";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Box from "@mui/material/Box";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-
-const ScrollHint = () => (
-  <Box
-    sx={{
-      position: "absolute",
-      bottom: 20,
-      left: "50%",
-      transform: "translateX(-50%)",
-      animation: "bounce 2s infinite",
-      opacity: 0.7,
-    }}
-  >
-    <ExpandMoreIcon sx={{ fontSize: 36, color: "white" }} />
-  </Box>
-);
 
 function App() {
   return (
@@ -52,7 +36,6 @@ function App() {
         <Element name="landing">
           <Landing />
         </Element>
-        <ScrollHint />
         <Element name="about">
           <About />
         </Element>
