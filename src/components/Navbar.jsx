@@ -23,7 +23,7 @@ const Navbar = () => {
       elevation={8}
       sx={{
         position: "fixed",
-        bottom: 30,
+        bottom: 20,
         left: "50%",
         transform: "translateX(-50%)",
         backdropFilter: "blur(10px)",
@@ -42,7 +42,7 @@ const Navbar = () => {
             to={section.to}
             smooth
             duration={500}
-            offset={-70}
+            offset={50}
             spy
             onSetActive={() => setActiveIndex(index)}
             onClick={() => setActiveIndex(index)}
