@@ -1,23 +1,72 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Element } from "react-scroll";
+import Landing from "./components/Landing";
+import About from "./components/About";
+import Experience from "./components/Experience";
+import Tools from "./components/Tools";
+import Contact from "./components/Contact";
+import Navbar from "./components/Navbar";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Box from "@mui/material/Box";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+
+const ScrollHint = () => (
+  <Box
+    sx={{
+      position: "absolute",
+      bottom: 20,
+      left: "50%",
+      transform: "translateX(-50%)",
+      animation: "bounce 2s infinite",
+      opacity: 0.7,
+    }}
+  >
+    <ExpandMoreIcon sx={{ fontSize: 36, color: "white" }} />
+  </Box>
+);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Box
+        sx={{
+          background: `linear-gradient(to bottom,
+        #1a2a6c 0%,         /* Landing start */
+        #b21f1f 20%,
+        #fdbb2d 30%,
+        #2b1055 40%,        /* About */
+        #7597de 50%,
+        #5f0a87 60%,
+        #ff6a00 70%,        /* Experience */
+        #ee0979 75%,
+        #a4508b 80%,
+        #0f172a 85%,        /* Tools */
+        #1e40af 90%,
+        #14b8a6 95%,
+        #1a2a6c 100%        /* Contact */
+      )`,
+          minHeight: "100vh",
+        }}
+      >
+        <Element name="landing">
+          <Landing />
+        </Element>
+        <ScrollHint />
+        <Element name="about">
+          <About />
+        </Element>
+        <Element name="experience">
+          <Experience />
+        </Element>
+        <Element name="tools">
+          <Tools />
+        </Element>
+        <Element name="contact">
+          <Contact />
+        </Element>
+      </Box>
+      <Navbar />
     </div>
   );
 }
