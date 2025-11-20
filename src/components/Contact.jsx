@@ -142,6 +142,21 @@ const Contact = () => {
           />
         </Stack>
       </Box>
+      {/* Trademark bottom right */}
+      <Box
+        sx={{
+          position: "absolute",
+          bottom: "20px",
+          right: "20px",
+          fontSize: "0.75rem",
+          opacity: 0.6,
+          color: "#e2e8f0",
+          pointerEvents: "none",
+        }}
+      >
+        © {new Date().getFullYear()} Robert Widjaja™
+      </Box>
+
     </Box>
   );
 };
@@ -169,6 +184,7 @@ const ContactIcon = ({ href, icon, label }) => (
     <Box sx={{ fontSize: 28 }}>{icon}</Box>
     {label}
   </Box>
+  
 );
 
 export default Contact;

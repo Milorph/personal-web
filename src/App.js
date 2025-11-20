@@ -57,6 +57,7 @@ function App() {
 
       </Box>
       <Navbar />
+      
     </div>
   );
 }
