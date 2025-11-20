@@ -53,6 +53,57 @@ const Experience = () => {
 
       <Box sx={{ width: "100%", maxWidth: "1200px", mx: "auto" }}>
         <VerticalTimeline layout="2-columns">
+          <VerticalTimelineElement
+            date="Sep 2025 – Present"
+            position="left"
+            iconStyle={{ background: "#22c55e", color: "#fff" }}
+            contentStyle={{
+              background: "#1e293b",
+              color: "#fff",
+              padding: "20px 24px",
+            }}
+            contentArrowStyle={{ borderRight: "7px solid #334155" }}
+            icon={<WorkIcon />}
+          >
+            <AnimatedBox>
+              <Box
+                sx={{ display: "flex", alignItems: "center", gap: 2, mb: 1 }}
+              >
+                <Box
+                  component="img"
+                  src="uvic.png"
+                  alt="Uvic"
+                  sx={{ width: 60, height: 40 }}
+                />
+                <Typography variant="h6" fontWeight="bold">
+                  Teaching Assistant
+                </Typography>
+              </Box>
+              <Typography variant="subtitle1" sx={{ mb: 1 }}>
+                University of Victoria, Victoria, BC
+              </Typography>
+              <Typography variant="body2">
+                Led weekly ECE labs and CSC labs, guiding over 200 students through coding, debugging, and circuit design
+              </Typography>
+              <Box sx={{ mt: 2, display: "flex", gap: 1, flexWrap: "wrap" }}>
+                <Chip
+                  label="Teaching"
+                  size="small"
+                  sx={{ backgroundColor: "#3B82F6", color: "#FFFFFF" }}
+                />
+                <Chip
+                  label="Circuit Design"
+                  size="small"
+                  sx={{ backgroundColor: "#2563EB", color: "#FFFFFF" }}
+                />
+                <Chip
+                  label="C++"
+                  size="small"
+                  sx={{ backgroundColor: "#1E40AF", color: "#FFFFFF" }}
+                />
+              </Box>
+            </AnimatedBox>
+          </VerticalTimelineElement>
           {/* UVic */}
           <VerticalTimelineElement
             date="Sep 2025 – Aug 2026"
