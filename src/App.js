@@ -9,6 +9,8 @@ import Navbar from "./components/Navbar";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Box from "@mui/material/Box";
+import FadeInSection from "./components/FadeInSection";
+
 
 function App() {
   return (
@@ -30,24 +32,29 @@ function App() {
         #14b8a6 95%,
         #1a2a6c 100%        /* Contact */
       )`,
-          minHeight: "100vh",
+          minHeight: "auto",
         }}
       >
         <Element name="landing">
-          <Landing />
+          <FadeInSection><Landing /></FadeInSection>
         </Element>
+
         <Element name="about">
-          <About />
+          <FadeInSection><About /></FadeInSection>
         </Element>
+
         <Element name="experience">
-          <Experience />
+          <FadeInSection><Experience /></FadeInSection>
         </Element>
+
         <Element name="tools">
-          <Tools />
+          <FadeInSection><Tools /></FadeInSection>
         </Element>
+
         <Element name="contact">
-          <Contact />
+          <FadeInSection><Contact /></FadeInSection>
         </Element>
+
       </Box>
       <Navbar />
     </div>
