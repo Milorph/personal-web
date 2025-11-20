@@ -50,6 +50,17 @@ function App() {
         </Element>
       </Box>
       <Navbar />
+      <div style={{
+          position: "fixed",
+          bottom: "12px",
+          right: "12px",
+          fontSize: "0.75rem",
+          color: "#cbd5e1",
+          opacity: 0.7,
+          pointerEvents: "none" // makes sure navbar scroll links still work
+        }}>
+          © {new Date().getFullYear()} Robert Widjaja™
+        </div>
     </div>
   );
 }

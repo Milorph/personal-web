@@ -1,6 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { Box, Typography, Tooltip } from "@mui/material";
 import Slider from "react-slick";
+import { motion } from "framer-motion";
 
 const tools = {
   Languages: [
@@ -26,7 +27,6 @@ const tools = {
     { label: "Tailwind", class: "devicon-tailwindcss-plain colored" },
     { label: "Bootstrap", class: "devicon-bootstrap-plain colored" },
     { label: "ASP.NET", class: "devicon-dotnetcore-plain colored" },
-    { label: "Mocha", class: "devicon-mocha-plain colored" },
     { label: "Express", class: "devicon-express-original" },
     { label: "Redux", class: "devicon-redux-original colored" },
     { label: "Angular", class: "devicon-angularjs-plain colored" },
@@ -44,18 +44,12 @@ const tools = {
     { label: "Node.js", class: "devicon-nodejs-plain colored" },
     { label: "MongoDB", class: "devicon-mongodb-plain colored" },
     { label: "Postman", class: "devicon-postman-plain colored" },
-    { label: "Bash", class: "devicon-bash-plain colored" },
     { label: "Linux", class: "devicon-linux-plain colored" },
-    { label: "NPM", class: "devicon-npm-original-wordmark colored" },
     { label: "VS Code", class: "devicon-vscode-plain colored" },
     { label: "Yarn", class: "devicon-yarn-plain colored" },
   ],
   "ML & Data": [
     { label: ".NET ML", class: "devicon-dotnetcore-plain colored" },
-    { label: "scikit-learn", class: "devicon-python-plain" },
-    { label: "pandas", class: "devicon-python-plain" },
-    { label: "PostgreSQL", class: "devicon-postgresql-plain colored" },
-    { label: "SQLite", class: "devicon-sqlite-plain colored" },
     { label: "TensorFlow", class: "devicon-tensorflow-original colored" },
     { label: "Jupyter", class: "devicon-jupyter-plain colored" },
     { label: "MATLAB", class: "devicon-matlab-plain colored" },
@@ -67,9 +61,9 @@ const getSliderSettings = (index) => ({
   infinite: true,
   speed: 2000,
   slidesToShow: 6,
-  slidesToScroll: 1,
   autoplay: true,
   autoplaySpeed: 1,
+  slidesToScroll: 1,
   cssEase: "linear",
   pauseOnHover: true,
   rtl: index % 2 === 1,
@@ -83,44 +77,35 @@ const getSliderSettings = (index) => ({
   ],
 });
 
-const ToolsAndTechnologies = () => {
-  const sliderRefs = useRef({});
+// Animation variant for each category line
+const rowVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, delay: i * 0.2 },
+  }),
+};
 
-  useEffect(() => {
-    Object.keys(tools).forEach((category) => {
-      const key = category.replace(/\s+/g, "-").replace(/[^a-zA-Z0-9-_]/g, "");
-      const container = document.querySelector(`.${key}-slider`);
-      if (!container) return;
-
-      const handleWheel = (e) => {
-        e.preventDefault();
-        if (e.deltaY < 0) {
-          sliderRefs.current[category]?.slickPrev();
-        } else {
-          sliderRefs.current[category]?.slickNext();
-        }
-      };
-
-      container.addEventListener("wheel", handleWheel, { passive: false });
-      return () =>
-        container.removeEventListener("wheel", handleWheel, { passive: false });
-    });
-  }, []);
-
-  return (
-    <Box
-      id="technologies"
-      sx={{
-        minHeight: "100vh",
-        mt: 1,
-        color: "white",
-        px: { xs: 3, md: 6 },
-        py: 10,
-        fontFamily: '"Inter", "Roboto", "Poppins", sans-serif',
-        display: "flex",
-        flexDirection: "column",
-        gap: 8,
-      }}
+const ToolsAndTechnologies = () => (
+  <Box
+    id="technologies"
+    sx={{
+      minHeight: "100vh",
+      color: "white",
+      px: { xs: 3, md: 6 },
+      py: 10,
+      display: "flex",
+      flexDirection: "column",
+      gap: 8,
+    }}
+  >
+    {/* Title Animation */}
+    <motion.div
+      initial={{ opacity: 0, y: 25 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.8 }}
     >
       <Typography
         variant="h3"
@@ -130,108 +115,53 @@ const ToolsAndTechnologies = () => {
       >
         Tools & Technologies
       </Typography>
+    </motion.div>
 
-      {Object.entries(tools).map(([category, items], index) => {
-        const key = category
-          .replace(/\s+/g, "-")
-          .replace(/[^a-zA-Z0-9-_]/g, "");
-        const fadeColor = "#3b82f6";
+    {Object.entries(tools).map(([category, items], index) => {
+      const key = category.replace(/\s+/g, "-");
 
-        return (
-          <Box
-            key={category}
-            sx={{ maxWidth: 1300, mx: "auto", position: "relative" }}
-          >
-            <Typography
-              variant="h5"
-              fontWeight="bold"
-              sx={{
-                color: "#FFFFFF",
-                mb: 2,
-                textAlign: "left",
-              }}
-            >
-              {category}
-            </Typography>
+      return (
+        <motion.div
+          key={category}
+          variants={rowVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          custom={index}
+        >
+          <Typography variant="h5" fontWeight="bold" sx={{ mb: 2 }}>
+            {category}
+          </Typography>
 
-            <Box
-              sx={{
-                position: "relative",
-              }}
-            >
-              <Slider
-                ref={(el) => (sliderRefs.current[category] = el)}
-                className={`${key}-slider`}
-                {...getSliderSettings(index)}
-              >
-                {items.map(({ class: iconClass, label }) => (
-                  <Box key={label} sx={{ px: 1 }}>
-                    <Tooltip title={label} arrow>
-                      <Box
-                        sx={{
-                          width: 120,
-                          height: 120,
-                          backgroundColor: "#e2e8f0",
-                          borderRadius: 3,
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          flexShrink: 0,
-                          boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
-                          overflow: "hidden", // ✅ prevents bouncing out
-                          "&:hover i": {
-                            animation: "bounce-icon 0.5s ease",
-                          },
-                        }}
-                      >
-                        <Box
-                          sx={{
-                            width: 64,
-                            height: 64,
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                          }}
-                        >
-                          <i className={iconClass} style={{ fontSize: 64 }} />
-                        </Box>
-                      </Box>
-                    </Tooltip>
-                  </Box>
-                ))}
-              </Slider>
-
-              {/* Fade overlays */}
-              <Box
-                sx={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: 60,
-                  height: "100%",
-                  zIndex: 2,
-                  pointerEvents: "none",
-                  background: `linear-gradient(to right, ${fadeColor}, transparent)`,
-                }}
-              />
-              <Box
-                sx={{
-                  position: "absolute",
-                  top: 0,
-                  right: 0,
-                  width: 60,
-                  height: "100%",
-                  zIndex: 2,
-                  pointerEvents: "none",
-                  background: `linear-gradient(to left, ${fadeColor}, transparent)`,
-                }}
-              />
-            </Box>
+          <Box sx={{ position: "relative", width: "100%" }}>
+            <Slider className={`${key}-slider`} {...getSliderSettings(index)}>
+              {items.map(({ class: iconClass, label }) => (
+                <Box key={label} sx={{ px: 1 }}>
+                  <Tooltip title={label} arrow>
+                    <Box
+                      sx={{
+                        width: 120,
+                        height: 120,
+                        backgroundColor: "#e2e8f0",
+                        borderRadius: 3,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+                        "&:hover i": { animation: "bounce-icon 0.5s ease" },
+                      }}
+                    >
+                      <i className={iconClass} style={{ fontSize: 64 }} />
+                    </Box>
+                  </Tooltip>
+                </Box>
+              ))}
+            </Slider>
           </Box>
-        );
-      })}
-    </Box>
-  );
-};
+        </motion.div>
+      );
+    })}
+  </Box>
+);
 
 export default ToolsAndTechnologies;
