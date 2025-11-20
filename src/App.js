@@ -36,7 +36,7 @@ function App() {
         }}
       >
         <Element name="landing">
-          <FadeInSection><Landing /></FadeInSection>
+          <Landing />
         </Element>
 
         <Element name="about">
