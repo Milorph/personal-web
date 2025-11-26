@@ -103,7 +103,7 @@ const Experience = () => {
 
           {/* UVic Program */}
           <VerticalTimelineElement
-            date="Sep 2025 – Aug 2026"
+            date="Sep 2025 – Present"
             position="right"
             iconStyle={{ background: "#3b82f6", color: "#fff" }}
             contentStyle={{ background: "#1e293b", color: "#fff" }}
@@ -123,7 +123,14 @@ const Experience = () => {
                   M.Eng. in Applied Data Science
                 </Typography>
               </Box>
-              <Typography variant="subtitle1">University of Victoria</Typography>
+              <Typography variant="subtitle1">University of Victoria, Victoria, BC</Typography>
+              <Box sx={{ mt: 2, display: "flex", gap: 1, flexWrap: "wrap" }}>
+                <Chip label="Data Science" size="small" sx={{ backgroundColor: "#A78BFA", color: "#fff" }} />
+                <Chip label="Machine Learning" size="small" sx={{ backgroundColor: "#8B5CF6", color: "#fff" }} />
+                <Chip label="Python" size="small" sx={{ backgroundColor: "#6D28D9", color: "#fff" }} />
+              </Box>
+
+
             </motion.div>
           </VerticalTimelineElement>
 
@@ -152,6 +159,13 @@ const Experience = () => {
               <Typography variant="body2">
                 Taught K–12 math using adaptive learning.
               </Typography>
+              <Box sx={{ mt: 2, display: "flex", gap: 1, flexWrap: "wrap" }}>
+                <Chip label="Teaching" size="small" sx={{ backgroundColor: "#FCA5A5", color: "#fff" }} />
+                <Chip label="Math Coaching" size="small" sx={{ backgroundColor: "#F87171", color: "#fff" }} />
+                <Chip label="Algebra & Calculus" size="small" sx={{ backgroundColor: "#DC2626", color: "#fff" }} />
+              </Box>
+
+
             </motion.div>
           </VerticalTimelineElement>
 
@@ -172,6 +186,12 @@ const Experience = () => {
               <Typography variant="body2">
                 Improved ML test accuracy to 96%, added full-stack features, and fixed production bugs.
               </Typography>
+              <Box sx={{ mt: 2, display: "flex", gap: 1, flexWrap: "wrap" }}>
+                <Chip label="Machine Learning" size="small" sx={{ backgroundColor: "#5EEAD4", color: "#0f172a" }} />
+                <Chip label="C#" size="small" sx={{ backgroundColor: "#2DD4BF", color: "#0f172a" }} />
+                <Chip label="Bug Fixing" size="small" sx={{ backgroundColor: "#0D9488", color: "#fff" }} />
+              </Box>
+
             </motion.div>
           </VerticalTimelineElement>
 
@@ -192,12 +212,20 @@ const Experience = () => {
               <Typography variant="body2">
                 Built Alexa moderation tools with AWS, React & Node.js — reducing onboarding from days → minutes.
               </Typography>
+              <Box sx={{ mt: 2, display: "flex", gap: 1, flexWrap: "wrap" }}>
+                <Chip label="AWS" size="small" sx={{ backgroundColor: "#FCD34D", color: "#0f172a" }} />
+                <Chip label="React" size="small" sx={{ backgroundColor: "#FBBF24", color: "#0f172a" }} />
+                <Chip label="Node.js" size="small" sx={{ backgroundColor: "#D97706", color: "#fff" }} />
+                <Chip label="Internal Tools" size="small" sx={{ backgroundColor: "#B45309", color: "#fff" }} />
+              </Box>
+
+
             </motion.div>
           </VerticalTimelineElement>
 
           {/* Seattle U */}
           <VerticalTimelineElement
-            date="2019 – Jun 2024"
+            date="Sept 2022 – Jun 2024"
             position="right"
             icon={<SchoolIcon />}
             iconStyle={{ background: "#3b82f6", color: "#fff" }}
@@ -210,6 +238,13 @@ const Experience = () => {
               </Box>
               <Typography variant="subtitle1">Seattle University</Typography>
               <Typography variant="body2">GPA: 3.61</Typography>
+              <Box sx={{ mt: 2, display: "flex", gap: 1, flexWrap: "wrap" }}>
+                <Chip label="Computer Science" size="small" sx={{ backgroundColor: "#C7D2FE", color: "#1e1b4b" }} />
+                <Chip label="Algorithms" size="small" sx={{ backgroundColor: "#A5B4FC", color: "#1e1b4b" }} />
+                <Chip label="Software Engineering" size="small" sx={{ backgroundColor: "#6366F1", color: "#fff" }} />
+              </Box>
+
+
             </motion.div>
           </VerticalTimelineElement>
 
@@ -230,6 +265,13 @@ const Experience = () => {
               <Typography variant="body2">
                 Revamped UI with Next.js & Tailwind, improved engagement by 30%.
               </Typography>
+              <Box sx={{ mt: 2, display: "flex", gap: 1, flexWrap: "wrap" }}>
+                <Chip label="Next.js" size="small" sx={{ backgroundColor: "#F9A8D4", color: "#1f2937" }} />
+                <Chip label="Tailwind" size="small" sx={{ backgroundColor: "#F472B6", color: "#1f2937" }} />
+                <Chip label="UI/UX" size="small" sx={{ backgroundColor: "#DB2777", color: "#fff" }} />
+              </Box>
+
+
             </motion.div>
           </VerticalTimelineElement>
 
@@ -248,6 +290,13 @@ const Experience = () => {
               </Box>
               <Typography variant="subtitle1">Shoreline Community College</Typography>
               <Typography variant="body2">GPA: 3.84</Typography>
+              <Box sx={{ mt: 2, display: "flex", gap: 1, flexWrap: "wrap" }}>
+                <Chip label="Computer Science" size="small" sx={{ backgroundColor: "#86EFAC", color: "#064e3b" }} />
+                <Chip label="Math Foundations" size="small" sx={{ backgroundColor: "#4ADE80", color: "#064e3b" }} />
+                <Chip label="Java" size="small" sx={{ backgroundColor: "#22C55E", color: "#fff" }} />
+              </Box>
+
+
             </motion.div>
           </VerticalTimelineElement>
 

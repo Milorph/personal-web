@@ -6,14 +6,18 @@ import InfoIcon from "@mui/icons-material/Info";
 import WorkIcon from "@mui/icons-material/Work";
 import BuildIcon from "@mui/icons-material/Build";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
+import FolderIcon from "@mui/icons-material/Folder";
+
 
 const sections = [
   { label: "Home", icon: <HomeIcon />, to: "landing" },
   { label: "About", icon: <InfoIcon />, to: "about" },
   { label: "Experience", icon: <WorkIcon />, to: "experience" },
+  { label: "Projects", icon: <FolderIcon />, to: "projects" },
   { label: "Tools", icon: <BuildIcon />, to: "tools" },
   { label: "Contact", icon: <ContactMailIcon />, to: "contact" },
 ];
+
 
 const Navbar = () => {
   const [activeIndex, setActiveIndex] = useState(0);
